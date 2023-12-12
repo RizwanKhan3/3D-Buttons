@@ -1,0 +1,337 @@
+.grid {
+  display: grid;
+  gap: 30px;
+  /* background: #f3f3f3; */
+  place-items: center;
+}
+
+body {
+  background-color: #f3f3f3; /* Fallback for unsupported browsers */
+  background-image: linear-gradient(
+    45deg,
+    #8e2de2,
+    #4a00e0
+  );
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease
+    infinite;
+
+  /* Other body styles */
+  margin-top: 30px;
+  font-family: Arial, sans-serif;
+  /* ... */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/*  */
+
+.anim-style-btn {
+  position: relative;
+  display: inline-block;
+  padding: 15px 40px;
+  font-size: 1.4rem;
+  text-align: center;
+  background-color: #8e2de2;
+  background-image: linear-gradient(
+    45deg,
+    #8e2de2,
+    #4a00e0
+  );
+  background-size: 200% 200%;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px
+    rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.anim-style-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  );
+  transition: all 0.5s ease;
+  border-radius: 50%;
+  transform: translate(-50%, -50%)
+    scale(0);
+}
+
+.anim-style-btn:hover::before {
+  transform: translate(-50%, -50%)
+    scale(1);
+}
+
+.anim-style-btn:hover {
+  animation: pulse 1.5s ease infinite
+    alternate;
+  background-position: right bottom;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+/* 
+
+*/
+
+.g-style-btn {
+  position: relative;
+  display: inline-block;
+  padding: 15px 40px;
+  font-size: 1.4rem;
+  text-align: center;
+  background-color: #8e2de2;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px
+    rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.g-style-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1),
+    transparent,
+    rgba(255, 255, 255, 0.1)
+  );
+  background-size: 400% 400%;
+  border-radius: 50%;
+  animation: sparkle 2s linear infinite;
+}
+
+.g-style-btn:hover::before {
+  animation-play-state: paused;
+}
+
+@keyframes sparkle {
+  0% {
+    transform: translate(-50%, -50%)
+      rotate(0deg);
+    background-position: 0 0;
+  }
+  100% {
+    transform: translate(-50%, -50%)
+      rotate(360deg);
+    background-position: 400% 400%;
+  }
+}
+
+.g-style-btn:hover {
+  box-shadow: 0 8px 12px
+    rgba(0, 0, 0, 0.3);
+}
+
+/* 
+
+
+*/
+
+.glow-style-btn {
+  position: relative;
+  display: inline-block;
+  padding: 15px 40px;
+  font-size: 1.4rem;
+  text-align: center;
+  background-color: #8e2de2;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px
+    rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.glow-style-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%)
+    scale(0);
+  z-index: 1;
+  transition: all 0.5s ease-out;
+}
+
+.glow-style-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%)
+    scale(0);
+  z-index: 1;
+  transition: all 0.5s ease-out;
+}
+
+.glow-style-btn:hover::before,
+.glow-style-btn:hover::after {
+  transform: translate(-50%, -50%)
+    scale(1);
+}
+
+.glow-style-btn:hover {
+  box-shadow: 0 8px 12px
+    rgba(0, 0, 0, 0.3);
+}
+
+.glow-style-btn:hover::before {
+  animation: glow 1.5s ease-in-out
+    infinite;
+}
+
+@keyframes glow {
+  0% {
+    transform: translate(-50%, -50%)
+      scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%)
+      scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* 
+
+*/
+.bubble-style-btn {
+  position: relative;
+  display: inline-block;
+  padding: 15px 40px;
+  font-size: 1.4rem;
+  text-align: center;
+  background-color: #8e2de2;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px
+    rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Animation for the bubbles */
+.bubble-style-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.6
+  );
+  border-radius: 50%;
+  animation: bubble 1.5s infinite
+    ease-in-out;
+}
+
+.bubble {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.6
+  );
+  border-radius: 50%;
+  animation: bubble 1.5s infinite
+      ease-in-out,
+    glow 1.5s infinite ease-in-out;
+  /* pointer-events: none; */
+}
+/* Bubbling animation */
+@keyframes bubble {
+  0% {
+    transform: translate(-50%, -50%)
+      scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%)
+      scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Button hover styles */
+.bubble-style-btn:hover {
+  box-shadow: 0 8px 12px
+    rgba(0, 0, 0, 0.3);
+}
+
+/* Button hover effect - additional glow */
+.bubble-style-btn:hover::before {
+  animation: glow 1.5s ease-in-out
+    infinite;
+}
+
+/* Glow animation on hover */
+@keyframes glow {
+  0% {
+    transform: translate(-50%, -50%)
+      scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%)
+      scale(1.5);
+    opacity: 0;
+  }
+}
